@@ -4,9 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import { addProductReducer, counterReducer } from './counter.reducer';
 import { CounterComponent } from './counter/counter.component';
 import { ProductComponent } from './product/product.component';
+import { counterReducer } from './counter.reducer';
+import { addProductReducer } from './product.reducer';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,7 @@ import { ProductComponent } from './product/product.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({ count: counterReducer }),
-    StoreModule.forRoot({ product: addProductReducer})
+    StoreModule.forRoot({ count: counterReducer ,product: addProductReducer}),
   ],
   providers: [],
   bootstrap: [AppComponent]
